@@ -5,9 +5,9 @@ import { MessageCircle, Menu, X } from "lucide-react";
 
 const links = [
   { href: "#beneficios", label: "Benefícios" },
-  { href: "#atracoes", label: "Atrações" },
-  { href: "#galeria", label: "Galeria" },
-  { href: "#depoimentos", label: "Depoimentos" },
+  { href: "#como-funciona", label: "Como Funciona" },
+  { href: "#dispositivos", label: "Dispositivos" },
+  { href: "#planos", label: "Planos" },
   { href: "#faq", label: "FAQ" },
 ];
 
@@ -24,23 +24,20 @@ const Navbar = () => {
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
-        scrolled ? "bg-card/95 backdrop-blur-md shadow-card" : "bg-transparent"
+        scrolled ? "bg-card/95 backdrop-blur-md shadow-card-dark" : "bg-transparent"
       }`}
     >
-      <div className="container flex items-center justify-between h-16 md:h-20">
-        <a href="#hero" className={`text-xl font-black transition-colors ${scrolled ? "text-primary" : "text-primary-foreground"}`}>
+      <div className="container flex items-center justify-between h-16 md:h-18">
+        <a href="#hero" className="text-xl font-black text-gradient">
           {SITE_NAME}
         </a>
 
-        {/* Desktop */}
         <div className="hidden md:flex items-center gap-6">
           {links.map((l) => (
             <a
               key={l.href}
               href={l.href}
-              className={`text-sm font-medium transition-colors hover:text-primary ${
-                scrolled ? "text-muted-foreground" : "text-primary-foreground/80"
-              }`}
+              className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors"
             >
               {l.label}
             </a>
@@ -48,14 +45,13 @@ const Navbar = () => {
           <Button variant="whatsapp" size="sm" className="rounded-full" asChild>
             <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
               <MessageCircle size={16} className="mr-1" />
-              WhatsApp
+              Testar Grátis
             </a>
           </Button>
         </div>
 
-        {/* Mobile toggle */}
         <button
-          className={`md:hidden ${scrolled ? "text-foreground" : "text-primary-foreground"}`}
+          className="md:hidden text-foreground"
           onClick={() => setMenuOpen(!menuOpen)}
           aria-label="Menu"
         >
@@ -63,7 +59,6 @@ const Navbar = () => {
         </button>
       </div>
 
-      {/* Mobile menu */}
       {menuOpen && (
         <div className="md:hidden bg-card/98 backdrop-blur-md border-t border-border animate-fade-in">
           <div className="container py-4 flex flex-col gap-3">
@@ -80,7 +75,7 @@ const Navbar = () => {
             <Button variant="whatsapp" className="rounded-full mt-2" asChild>
               <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
                 <MessageCircle size={18} className="mr-2" />
-                Falar no WhatsApp
+                Testar Grátis
               </a>
             </Button>
           </div>

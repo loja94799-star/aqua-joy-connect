@@ -8,24 +8,24 @@ import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 const faqs = [
   {
-    question: "Qual o horário de funcionamento?",
-    answer: "Funcionamos de terça a domingo, das 9h às 17h. Nos feriados, o horário pode ser estendido. Consulte nosso atendimento pelo WhatsApp para confirmar.",
+    question: "Precisa de internet?",
+    answer: "Sim, é necessária uma conexão de internet de no mínimo 10 Mbps para uma experiência fluida. Para conteúdo em 4K, recomendamos pelo menos 25 Mbps.",
   },
   {
-    question: "Posso levar comida de fora?",
-    answer: "Por questões de segurança e higiene, não é permitida a entrada de alimentos e bebidas. Temos restaurantes e lanchonetes com opções variadas e preços acessíveis.",
+    question: "Funciona na minha TV?",
+    answer: "Sim! Funciona em Smart TVs (Samsung, LG, TCL, etc.), TV Box, Fire Stick, celulares Android e iPhone, computadores e tablets.",
   },
   {
-    question: "Crianças menores de 5 anos pagam?",
-    answer: "Crianças com até 4 anos acompanhadas de um adulto pagante não pagam ingresso. A partir de 5 anos, o valor é cobrado normalmente.",
+    question: "Tem fidelidade ou contrato?",
+    answer: "Não! Você pode cancelar quando quiser, sem multas ou burocracia. Sem fidelidade, sem surpresas.",
   },
   {
-    question: "Tem estacionamento no local?",
-    answer: "Sim! Contamos com amplo estacionamento gratuito para carros e ônibus, com segurança 24 horas.",
+    question: "Como faço o pagamento?",
+    answer: "Aceitamos PIX, cartão de crédito e boleto. O pagamento é simples e seguro, tudo pelo nosso atendimento no WhatsApp.",
   },
   {
-    question: "Como compro meu ingresso?",
-    answer: "Você pode comprar seu ingresso pelo nosso WhatsApp com atendimento personalizado, ou diretamente na bilheteria do parque no dia da visita.",
+    question: "O teste grátis é realmente gratuito?",
+    answer: "Sim, 100% gratuito! Você testa sem compromisso e só contrata se gostar. Sem cartão de crédito, sem pegadinha.",
   },
 ];
 
@@ -33,20 +33,20 @@ const FAQSection = () => {
   const ref = useScrollReveal();
 
   return (
-    <section id="faq" className="py-20 md:py-28 bg-card">
+    <section id="faq" className="py-16 md:py-24 bg-background">
       <div className="container max-w-3xl" ref={ref}>
         <h2 className="text-3xl md:text-4xl font-bold text-center text-foreground mb-4">
-          Perguntas Frequentes
+          Dúvidas <span className="text-gradient">Frequentes</span>
         </h2>
         <p className="text-muted-foreground text-center mb-14 max-w-xl mx-auto">
-          Tire suas dúvidas antes de nos visitar
+          Respondemos as perguntas mais comuns dos nossos clientes
         </p>
         <Accordion type="single" collapsible className="space-y-3">
           {faqs.map((faq, i) => (
             <AccordionItem
               key={i}
               value={`faq-${i}`}
-              className="bg-background rounded-xl px-6 border shadow-sm"
+              className="gradient-card border-glow rounded-xl px-6"
             >
               <AccordionTrigger className="text-left font-semibold text-foreground hover:no-underline py-5">
                 {faq.question}
